@@ -1,4 +1,4 @@
 dir-size
 ========
 
-Directory Size Clculator.
+Directory Size Calculator.
