@@ -1,26 +1,34 @@
-#!/usr/bin/python3.3
+#!/usr/bin/env python
 
+#############################################################
+# FileName =  dsize.py                                      #
+# Descriprion = Calcualte a Directory Size and return that. #
+# FeedBack = Vahid.Maani@gmail.com                          #
+#############################################################
+
+# Import Needed Modules
 import os
 import sys
 
+# Define needed variables
+file_list = []
+size = 0
+
+# Check usage.
 if len(sys.argv) < 2:
     print("You should specify a directory like this:")
     print("\tdir_size.py <directory>")
     sys.exit()
 
-size_list = []
+# Fine files list.
+for dirpath, dirs, files in os.walk(sys.argv[1]):
+    for filename in files:
+        if not filename.startswith("."):
+            file_list.append(os.path.join(dirpath, filename))
 
-for dirpath, dirnames, filenames in os.walk(sys.argv[1]):
-    for file_name in filenames:
-        if dirpath != sys.argv[1]:
-            break
-        file_size = int(os.path.getsize(os.path.join(sys.argv[1],file_name)))
-        size_list.append(file_size)
-
-size = 0
-for i in range(0,len(size_list)):
-     size += size_list[i]
-print(size)
+# Find files size and calculate their sum.
+for x in file_list:
+    size += os.path.getsize(x)
 
 unit_list = ["B", "K", "M", "G"]
 unit = 0
