@@ -27,7 +27,7 @@ for dirpath, dirs, files in os.walk(sys.argv[1]):
 
 # Find files size and calculate their sum.
 for x in file_list:
-    size += os.path.getsize(x)
+    size += os.lstat(x).st_size
 
 unit_list = ["B", "K", "M", "G"]
 unit = 0
