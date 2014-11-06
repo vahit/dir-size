@@ -23,8 +23,7 @@ if len(sys.argv) < 2:
 # Fine files list.
 for dirpath, dirs, files in os.walk(sys.argv[1]):
     for filename in files:
-        if not filename.startswith("."):
-            file_list.append(os.path.join(dirpath, filename))
+        file_list.append(os.path.join(dirpath, filename))
 
 # Find files size and calculate their sum.
 for x in file_list:
