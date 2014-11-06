@@ -3,6 +3,7 @@
 #############################################################
 # FileName =  dsize.py                                      #
 # Descriprion = Calcualte a Directory Size and return that. #
+# Version = 1.0                                             #
 # FeedBack = Vahid.Maani@gmail.com                          #
 #############################################################
 
